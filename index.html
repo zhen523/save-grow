@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>存錢小農場 Save & Grow</title>
+<style>
+:root{--green:#496747;--green2:#71966a;--sage:#e6eedb;--cream:#f7f6ef;--ink:#304a31;--muted:#77816f;--line:#e3e7dc;--white:#fff;--orange:#d99a56;--red:#b35c4b}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:ui-rounded,"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;background:var(--green);color:white;font-weight:700;transition:.18s}button:hover{filter:brightness(1.07);transform:translateY(-1px)}button:disabled{opacity:.42;cursor:not-allowed;transform:none}.secondary{background:#eef2e8;color:var(--green);border:1px solid #dbe4d4}.danger{background:#fbefeb;color:var(--red);border:1px solid #f0d8d1}.small{padding:7px 10px;font-size:.88rem}.app{max-width:1100px;margin:0 auto;padding:22px 18px 50px}.hero{background:linear-gradient(120deg,#e6eedb,#f2ecd9);border-radius:26px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:18px;overflow:hidden}.eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.14em;color:#65785a}.hero h1{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0;color:var(--ink)}.hero p{margin:0;color:#617057;max-width:540px;line-height:1.7}.hero-art{font-size:clamp(4rem,9vw,7rem);white-space:nowrap;filter:drop-shadow(0 5px 2px #7d875326)}.nav{display:flex;gap:8px;margin:18px 0;flex-wrap:wrap}.nav button{flex:1;min-width:110px;background:white;color:#607057;border:1px solid var(--line)}.nav button.active{background:var(--green);color:white;border-color:var(--green)}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}.card{background:white;border:1px solid #ebeee5;border-radius:20px;padding:20px;box-shadow:0 5px 18px #3d54300a}.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}.span-4{grid-column:span 4}.card h2,.card h3{margin:0 0 14px}.card h2{font-size:1.2rem}.muted{color:var(--muted);font-size:.9rem;line-height:1.6}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}.field label{font-size:.88rem;font-weight:700;color:#53654b}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe5d8;border-radius:11px;padding:11px 12px;background:#fcfdf9;color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green2);box-shadow:0 0 0 3px #71966a20}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f7f8f2;border-radius:15px;padding:15px}.stat small{display:block;color:var(--muted);margin-bottom:8px}.stat strong{font-size:clamp(1.15rem,2vw,1.7rem);overflow-wrap:anywhere}.progress{height:10px;border-radius:30px;background:#e9ede3;overflow:hidden}.progress span{display:block;height:100%;background:var(--green2);border-radius:30px;transition:width .3s}.between{display:flex;align-items:center;justify-content:space-between;gap:10px}.pill{display:inline-flex;background:#edf2e7;color:var(--green);border-radius:99px;padding:5px 9px;font-size:.78rem;font-weight:800}.task{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border-bottom:0}.task-icon{font-size:1.5rem}.task-main{flex:1}.task-main strong{display:block}.task-main small{color:var(--muted)}.farm{background:#e8efd9;border-radius:18px;padding:17px}.farm-scene{background:#d2c19c;border-radius:16px;min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;margin:14px 0;color:#5f553e;background-image:radial-gradient(#ffffff30 1px,transparent 1px);background-size:14px 14px}.plant-emoji{font-size:4rem;line-height:1.3}.plot{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}.plot span{background:#b99e70;border-radius:10px;padding:8px;font-size:1.4rem;min-width:48px;text-align:center}.seed-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.seed{border:1px solid var(--line);border-radius:16px;padding:15px;text-align:center;background:#fff}.seed .emoji{font-size:2.5rem}.seed h3{margin:5px 0}.seed p{margin:4px 0 12px;color:var(--muted);font-size:.85rem}.seed button{width:100%}.notice{padding:12px 14px;border-radius:12px;background:#edf3e8;color:var(--green);margin:12px 0;font-size:.9rem}.notice.error{background:#fbefeb;color:var(--red)}.record-list{display:flex;flex-direction:column;gap:9px}.record{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:13px;padding:12px}.record .record-icon{font-size:1.35rem}.record-info{flex:1;min-width:0}.record-info strong{display:block;overflow-wrap:anywhere}.record-info small{color:var(--muted)}.amount{font-weight:800;white-space:nowrap}.amount.income{color:#477b4d}.amount.expense{color:var(--red)}.empty{text-align:center;padding:25px;color:var(--muted)}.footer{text-align:center;color:#899181;font-size:.8rem;margin-top:22px;line-height:1.7}.toggle{display:flex;align-items:center;gap:9px}.toggle input{width:18px;height:18px;accent-color:var(--green)}.achievement{display:flex;align-items:center;gap:10px;background:#f8f5e9;padding:12px;border-radius:13px}.achievement .medal{font-size:1.6rem}
+@media(max-width:760px){.app{padding:12px 12px 35px}.hero{padding:20px}.hero-art{font-size:4rem}.span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}.stats{grid-template-columns:1fr}.stat{display:flex;justify-content:space-between;align-items:center;gap:10px}.stat small{margin:0}.seed-list{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.card{padding:16px}.nav{display:grid;grid-template-columns:repeat(3,1fr)}.nav button{min-width:0;padding:10px 5px;font-size:.9rem}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div><div class="eyebrow">YOUR LITTLE FARM · SAVE & GROW</div><h1>存錢小農場 🌱</h1><p>把每一筆記帳變成照顧自己的小行動。達成儲蓄目標、種下種子，每天澆水，讓好習慣慢慢長大。</p></div>
+  <div class="hero-art" aria-hidden="true">🥕🌿</div>
+</header>
+<nav class="nav" aria-label="主要導覽">
+  <button class="active" data-view="dashboard">🏡 財務總覽</button><button data-view="records">📒 每日記帳</button><button data-view="garden">🌱 我的菜園</button>
+</nav>
+
+<main>
+<section id="dashboard" class="view active">
+  <div class="grid">
+    <article class="card span-12">
+      <div class="between"><h2>本月財務儀表板</h2><span class="pill" id="monthLabel"></span></div>
+      <div class="stats">
+        <div class="stat"><small>本月收入</small><strong id="totalIncome">$0</strong></div>
+        <div class="stat"><small>本月支出</small><strong id="totalExpense">$0</strong></div>
+        <div class="stat"><small>預估儲蓄</small><strong id="totalSavings">$0</strong></div>
+      </div>
+      <div style="margin-top:20px">
+        <div class="between" style="margin-bottom:8px"><strong>儲蓄目標進度</strong><strong id="goalPercent">0%</strong></div>
+        <div class="progress"><span id="goalBar" style="width:0%"></span></div>
+        <div class="between muted" style="margin-top:8px"><span id="goalCaption">設定目標，開始存錢</span><span id="remainingCaption"></span></div>
+      </div>
+    </article>
+    <article class="card span-5">
+      <h2>⚙️ 設定你的目標</h2>
+      <form id="settingsForm">
+        <div class="field"><label for="monthlyIncome">每月收入（元）</label><input id="monthlyIncome" type="number" min="0" step="1" placeholder="例如 30000" required></div>
+        <div class="field"><label for="savingsGoal">每月儲蓄目標（元）</label><input id="savingsGoal" type="number" min="0" step="1" placeholder="例如 10000" required></div>
+        <button type="submit" style="width:100%">儲存設定</button>
+      </form>
+      <p class="muted">預估儲蓄＝本月收入－本月支出。可購買種子的額度只計算超過目標的部分，並扣除已花費的種子費用。</p>
+    </article>
+    <article class="card span-7">
+      <h2>📅 今日理財任務</h2>
+      <div class="task"><div class="task-icon" id="ledgerTaskIcon">📒</div><div class="task-main"><strong>完成今日記帳</strong><small id="ledgerTaskText">至少新增一筆今天的收入或支出</small></div><span class="pill" id="ledgerStatus">待完成</span></div>
+      <div class="task"><div class="task-icon" id="waterTaskIcon">💧</div><div class="task-main"><strong>照顧菜園</strong><small id="waterTaskText">有種植植物時，每天記得澆水</small></div><span class="pill" id="waterStatus">待完成</span></div>
+      <div class="task"><div class="task-icon">🔥</div><div class="task-main"><strong>連續記帳天數</strong><small>每天至少新增一筆紀錄</small></div><span class="pill" id="streakCount">0 天</span></div>
+      <div class="notice" id="dailyMessage">每天記一筆，讓理財習慣慢慢發芽！</div>
+      <div class="field"><label for="reminderTime">每日提醒時間</label><div class="form-row"><input id="reminderTime" type="time" value="20:00"><button type="button" id="saveReminder" class="secondary">儲存提醒設定</button></div></div>
+      <label class="toggle"><input type="checkbox" id="notificationToggle"> 允許瀏覽器通知（需授權，網站開啟時可檢查提醒）</label>
+      <p class="muted">提醒功能受瀏覽器、通知權限與裝置設定限制；此單檔版本不保證關閉網頁後仍可推播。</p>
+    </article>
+    <article class="card span-12">
+      <div class="between"><h2>💰 超額儲蓄錢包</h2><span class="pill">種子基金</span></div>
+      <div class="between"><div><div class="muted">目前可用於購買種子的金額</div><strong id="seedBudget" style="font-size:2rem">$0</strong></div><button data-goto="garden">前往種菜 →</button></div>
+      <p class="muted" id="seedBudgetHint">先達成儲蓄目標，再用多存下來的錢擴建菜園。</p>
+    </article>
+    <article class="card span-12"><h2>🏆 我的成就</h2><div id="achievements" class="grid"></div></article>
+  </div>
+</section>
+
+<section id="records" class="view">
+  <div class="grid">
+    <article class="card span-5">
+      <h2>✍️ 新增一筆紀錄</h2>
+      <form id="recordForm">
+        <div class="form-row">
+          <div class="field"><label for="recordType">類型</label><select id="recordType"><option value="expense">支出</option><option value="income">收入</option></select></div>
+          <div class="field"><label for="recordAmount">金額（元）</label><input id="recordAmount" type="number" min="1" step="1" placeholder="例如 120" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="recordCategory">分類</label><select id="recordCategory"><option>餐飲</option><option>交通</option><option>購物</option><option>娛樂</option><option>學習</option><option>生活</option><option>薪資</option><option>獎金</option><option>其他</option></select></div>
+          <div class="field"><label for="recordDate">日期</label><input id="recordDate" type="date" required></div>
+        </div>
+        <div class="field"><label for="recordNote">備註（選填）</label><input id="recordNote" maxlength="80" placeholder="例如：午餐便當"></div>
+        <button type="submit" style="width:100%">＋ 新增紀錄</button>
+      </form>
+      <div id="recordNotice" aria-live="polite"></div>
+    </article>
+    <article class="card span-7">
+      <div class="between"><h2>📚 收支紀錄</h2><select id="filterType" aria-label="篩選紀錄" style="max-width:140px;padding:8px;border:1px solid var(--line);border-radius:10px"><option value="all">全部紀錄</option><option value="expense">只看支出</option><option value="income">只看收入</option></select></div>
+      <div class="between muted" style="margin-bottom:12px"><span id="recordCount">共 0 筆</span><span id="recordMonthTotal"></span></div>
+      <div id="recordList" class="record-list"></div>
+    </article>
+  </div>
+</section>
+
+<section id="garden" class="view">
+  <div class="grid">
+    <article class="card span-7">
+      <div class="between"><h2>🌱 我的專屬菜園</h2><span class="pill" id="farmLevel">農場 Lv.1</span></div>
+      <div class="farm">
+        <div class="between"><div><strong>小農今天也要努力！</strong><div class="muted">每天澆水，植物就會逐步成長。</div></div><div style="font-size:2.5rem">🌤️</div></div>
+        <div class="farm-scene">
+          <div class="plant-emoji" id="mainPlant">🟤</div>
+          <strong id="plantState">你的菜園還沒有植物</strong>
+          <div class="muted" id="plantProgressText">去商店購買種子，開始種植吧！</div>
+          <div class="progress" style="width:min(280px,100%);margin-top:12px"><span id="plantProgress" style="width:0%"></span></div>
+          <div class="plot" id="plantPlot"></div>
+        </div>
+        <div class="between"><div><strong id="plantName">尚未種植</strong><div class="muted" id="plantWaterState">先買種子才能開始</div></div><button id="waterButton" disabled>💧 幫植物澆水</button></div>
+        <div id="gardenNotice" aria-live="polite"></div>
+      </div>
+      <div style="margin-top:16px"><h3>📜 種植紀錄</h3><div id="harvestLog" class="record-list"><div class="empty">完成第一次收成後，紀錄會出現在這裡。</div></div></div>
+    </article>
+    <article class="card span-5">
+      <h2>🛒 種子商店</h2><p class="muted">種子只能使用超額儲蓄購買，不會動用你的儲蓄目標本金。</p>
+      <div class="seed-list" id="seedShop">
+        <div class="seed"><div class="emoji">🥕</div><h3>胡蘿蔔</h3><p>$100 · 需澆水 3 次</p><button data-seed="carrot">購買</button></div>
+        <div class="seed"><div class="emoji">🍅</div><h3>番茄</h3><p>$300 · 需澆水 4 次</p><button data-seed="tomato">購買</button></div>
+        <div class="seed"><div class="emoji">🥬</div><h3>高麗菜</h3><p>$500 · 需澆水 5 次</p><button data-seed="cabbage">購買</button></div>
+      </div>
+      <div class="notice" id="shopBudgetNotice">目前可用種子基金：$0</div>
+      <h3 style="margin-top:22px">🌼 農場小提醒</h3>
+      <ul class="muted" style="padding-left:20px;line-height:1.9"><li>每天每株植物只能澆水一次。</li><li>植物成熟後可收成，繼續種下一株。</li><li>連續照顧植物，收集不同蔬菜成就。</li><li>這是理財養成遊戲，收成不代表真實金錢收益。</li></ul>
+    </article>
+  </div>
+</section>
+</main>
+<footer class="footer">存錢小農場 Save & Grow · 單一 HTML 理財遊戲原型<br>資料儲存在此瀏覽器的 LocalStorage。請勿在共用裝置存放敏感財務資訊。</footer>
+</div>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const today = () => { const d=new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
+  const monthNow = () => today().slice(0,7);
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const cropData = {
+    carrot:{name:'胡蘿蔔',emoji:'🥕',price:100,days:3},
+    tomato:{name:'番茄',emoji:'🍅',price:300,days:4},
+    cabbage:{name:'高麗菜',emoji:'🥬',price:500,days:5}
+  };
+  const defaultState = () => ({income:30000,goal:10000,records:[],plants:[],harvests:[],reminder:'20:00',notifications:false,lastReminderDate:'',createdAt:today()});
+  let state;
+  try { state = {...defaultState(), ...JSON.parse(localStorage.getItem('saveGrowData') || '{}')}; } catch { state=defaultState(); }
+  if (!Array.isArray(state.records)) state.records=[];
+  if (!Array.isArray(state.plants)) state.plants=[];
+  if (!Array.isArray(state.harvests)) state.harvests=[];
+  let noticeTimer;
+  function save(){ try{localStorage.setItem('saveGrowData',JSON.stringify(state));}catch(e){console.warn('LocalStorage unavailable',e);} }
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function monthlyRecords(){return state.records.filter(r=>r.date.slice(0,7)===monthNow());}
+  function totals(){const rs=monthlyRecords();const income=rs.filter(r=>r.type==='income').reduce((s,r)=>s+r.amount,0)+Number(state.income||0);const expenses=rs.filter(r=>r.type==='expense').reduce((s,r)=>s+r.amount,0);return {income,expenses,savings:income-expenses};}
+  // The monthly income setting is a baseline; income records are added on top of it.
+  function seedBudget(){const t=totals();return Math.max(0,t.savings-Number(state.goal||0)-state.plants.reduce((s,p)=>s+p.price,0));}
+  function activePlant(){return state.plants.find(p=>!p.harvested);}
+  function showNotice(id,msg,error=false){const el=$(id);if(!el)return;el.className='notice'+(error?' error':'');el.textContent=msg;}
+  function switchView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'});}
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
+  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.goto)));
+  function render(){
+    const t=totals(), budget=seedBudget(), percent=Number(state.goal)>0?Math.max(0,Math.min(100,t.savings/Number(state.goal)*100)):(t.savings>=0?100:0);
+    $('monthLabel').textContent=new Date().toLocaleDateString('zh-TW',{year:'numeric',month:'long'});
+    $('totalIncome').textContent=money(t.income);$('totalExpense').textContent=money(t.expenses);$('totalSavings').textContent=money(t.savings);
+    $('goalPercent').textContent=Math.round(percent)+'%';$('goalBar').style.width=percent+'%';
+    $('goalCaption').textContent=t.savings>=Number(state.goal)?'🎉 已達成本月儲蓄目標！':'儲蓄目標 '+money(Number(state.goal||0));
+    $('remainingCaption').textContent=t.savings>=Number(state.goal)?'超額 '+money(t.savings-Number(state.goal||0)):'還差 '+money(Number(state.goal||0)-t.savings);
+    $('monthlyIncome').value=state.income;$('savingsGoal').value=state.goal;$('reminderTime').value=state.reminder||'20:00';$('notificationToggle').checked=!!state.notifications;
+    $('seedBudget').textContent=money(budget);$('shopBudgetNotice').textContent='目前可用種子基金：'+money(budget);
+    $('seedBudgetHint').textContent=budget>0?'太棒了！你已經有超額儲蓄，可以去商店買種子。':'先達成儲蓄目標，再用多存下來的錢擴建菜園。';
+    const todayRows=state.records.filter(r=>r.date===today());
+    $('ledgerTaskIcon').textContent=todayRows.length?'✅':'📒';$('ledgerTaskText').textContent=todayRows.length?'今天已新增 '+todayRows.length+' 筆紀錄':'至少新增一筆今天的收入或支出';$('ledgerStatus').textContent=todayRows.length?'已完成':'待完成';
+    const plant=activePlant(), watered=plant&&plant.lastWatered===today();
+    $('waterTaskIcon').textContent=watered?'✅':'💧';$('waterTaskText').textContent=!plant?'先種下第一株植物':watered?'今天已經澆水，明天再來照顧':'植物正在等待今天的水分';$('waterStatus').textContent=!plant?'未種植':watered?'已完成':'待完成';
+    $('streakCount').textContent=streakDays()+' 天';
+    $('dailyMessage').textContent=todayRows.length&&(!plant||watered)?'太好了！今天的理財任務都完成了。':!todayRows.length?'記得新增今天的收支，別讓小花園等太久！':!plant?'記完帳了！去種下一株植物，讓儲蓄更有趣。':'今天記帳完成後，別忘了幫植物澆水。';
+    renderRecords();renderGarden();renderAchievements();
+    document.querySelectorAll('[data-seed]').forEach(b=>{const crop=cropData[b.dataset.seed];b.disabled=budget<crop.price||!!activePlant();b.textContent=activePlant()?'先完成目前作物':budget<crop.price?'儲蓄不足':'購買 '+money(crop.price);});
+  }
+  function streakDays(){const dates=new Set(state.records.map(r=>r.date));let d=new Date();let count=0;while(true){const s=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;if(!dates.has(s))break;count++;d.setDate(d.getDate()-1);}return count;}
+  $('settingsForm').addEventListener('submit',e=>{e.preventDefault();const inc=Number($('monthlyIncome').value),goal=Number($('savingsGoal').value);if(!Number.isFinite(inc)||!Number.isFinite(goal)||inc<0||goal<0)return;state.income=inc;state.goal=goal;save();render();});
+  $('recordDate').value=today();
+  $('recordForm').addEventListener('submit',e=>{e.preventDefault();const amount=Number($('recordAmount').value),date=$('recordDate').value;if(!amount||amount<1||!date){showNotice('recordNotice','請輸入有效的金額與日期。',true);return;}const record={id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),type:$('recordType').value,amount,category:$('recordCategory').value,date,note:$('recordNote').value.trim(),createdAt:new Date().toISOString()};state.records.unshift(record);save();$('recordAmount').value='';$('recordNote').value='';$('recordDate').value=today();showNotice('recordNotice','新增成功！今天的記帳任務已更新。');render();});
+  $('filterType').addEventListener('change',renderRecords);
+  function renderRecords(){const filter=$('filterType').value;const rs=state.records.filter(r=>filter==='all'||r.type===filter).sort((a,b)=>b.date.localeCompare(a.date)||b.createdAt.localeCompare(a.createdAt));$('recordCount').textContent='共 '+rs.length+' 筆';const month=monthlyRecords();const mi=month.filter(r=>r.type==='income').reduce((s,r)=>s+r.amount,0),me=month.filter(r=>r.type==='expense').reduce((s,r)=>s+r.amount,0);$('recordMonthTotal').textContent='本月紀錄：收入 '+money(mi)+'／支出 '+money(me);
+    $('recordList').innerHTML=rs.length?rs.map(r=>`<div class="record"><div class="record-icon">${r.type==='income'?'💵':'🧾'}</div><div class="record-info"><strong>${esc(r.category)}${r.note?' · '+esc(r.note):''}</strong><small>${esc(r.date)} · ${r.type==='income'?'收入':'支出'}</small></div><div class="amount ${r.type}">${r.type==='income'?'+':'−'}${money(r.amount)}</div><button class="danger small" data-delete="${esc(r.id)}" aria-label="刪除紀錄">刪除</button></div>`).join(''):'<div class="empty">目前沒有紀錄。新增第一筆，開始了解自己的金錢流向吧！</div>';
+    $('recordList').querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>{if(confirm('確定刪除這筆紀錄嗎？')){state.records=state.records.filter(r=>r.id!==b.dataset.delete);save();render();}}));
+  }
+  function renderGarden(){const p=activePlant();$('farmLevel').textContent='農場 Lv.'+(1+Math.floor(state.harvests.length/3));$('waterButton').disabled=!p||p.lastWatered===today()||p.growth>=p.days;$('waterButton').textContent=!p?'尚未種植':p.growth>=p.days?'植物已成熟':p.lastWatered===today()?'今日已澆水':'💧 幫植物澆水';
+    if(!p){$('mainPlant').textContent=state.harvests.length?'🌼':'🟤';$('plantState').textContent=state.harvests.length?'菜園正在等待新種子':'你的菜園還沒有植物';$('plantProgressText').textContent='去商店購買種子，開始種植吧！';$('plantProgress').style.width='0%';$('plantName').textContent='尚未種植';$('plantWaterState').textContent='種子基金：'+money(seedBudget());$('plantPlot').innerHTML=state.harvests.slice(-6).map(h=>`<span title="${esc(h.name)}">${h.emoji}</span>`).join('');return;}
+    const crop=cropData[p.kind],done=p.growth>=p.days,percent=Math.min(100,p.growth/p.days*100);$('mainPlant').textContent=done?crop.emoji:(p.growth===0?'🟤':p.growth===1?'🌱':p.growth===2?'🌿':'🪴');$('plantState').textContent=done?'🎉 '+crop.name+'成熟了！':p.growth===0?'種子已種下，等待第一次澆水':crop.name+'正在成長中……';$('plantProgressText').textContent=`成長進度 ${p.growth}/${p.days} 次澆水`; $('plantProgress').style.width=percent+'%';$('plantName').textContent=crop.emoji+' '+crop.name;$('plantWaterState').textContent=done?'可以收成囉！':p.lastWatered===today()?'今天已澆水，明天再來':'今天還沒澆水';$('plantPlot').innerHTML=`<span>${p.growth>=1?'🌱':'🟤'}</span><span>${p.growth>=2?'🌿':'🟤'}</span><span>${p.growth>=3?'🪴':'🟤'}</span>`;
+    if(done){$('waterButton').disabled=false;$('waterButton').textContent='🌾 收成作物';}
+    $('harvestLog').innerHTML=state.harvests.length?state.harvests.slice().reverse().map(h=>`<div class="record"><div class="record-icon">${h.emoji}</div><div class="record-info"><strong>${esc(h.name)} · 完成收成</strong><small>${esc(h.date)}</small></div><span class="pill">已收成</span></div>`).join(''):'<div class="empty">完成第一次收成後，紀錄會出現在這裡。</div>';
+  }
+  $('waterButton').addEventListener('click',()=>{const p=activePlant();if(!p)return;const crop=cropData[p.kind];if(p.growth>=p.days){state.harvests.push({id:String(Date.now()),kind:p.kind,name:crop.name,emoji:crop.emoji,date:today(),price:p.price});p.harvested=true;showNotice('gardenNotice','收成成功！你完成了 '+crop.name+'，再買一顆種子繼續經營菜園吧。');}else if(p.lastWatered===today()){showNotice('gardenNotice','今天已經澆過水，明天再來照顧植物。',true);}else{p.growth++;p.lastWatered=today();showNotice('gardenNotice',p.growth>=p.days?'澆水成功！植物成熟了，現在可以收成。':'澆水成功！'+crop.name+'又長大了一點，明天記得再來。');}save();render();});
+  document.querySelectorAll('[data-seed]').forEach(b=>b.addEventListener('click',()=>{const kind=b.dataset.seed,crop=cropData[kind];if(activePlant()){showNotice('gardenNotice','先完成或收成目前的植物，再種下一株。',true);return;}if(seedBudget()<crop.price){showNotice('gardenNotice','超額儲蓄不足，還不能購買這顆種子。',true);return;}state.plants.push({id:String(Date.now()),kind,price:crop.price,growth:0,lastWatered:'',harvested:false,plantedAt:today()});showNotice('gardenNotice','成功種下'+crop.name+'！明天也要記得澆水。');save();render();}));
+  function renderAchievements(){const list=[{ok:state.records.length>=1,emoji:'📒',name:'第一筆記帳',desc:'新增第一筆收支紀錄'},{ok:streakDays()>=3,emoji:'🔥',name:'連續記帳 3 天',desc:'連續三天記帳'},{ok:state.harvests.length>=1,emoji:'🌾',name:'第一次收成',desc:'照顧植物直到成熟'},{ok:totals().savings>=Number(state.goal||0),emoji:'💰',name:'儲蓄達標',desc:'達成每月儲蓄目標'}];$('achievements').innerHTML=list.map(a=>`<div class="achievement" style="grid-column:span 6;opacity:${a.ok?1:.55}"><div class="medal">${a.ok?a.emoji:'🔒'}</div><div><strong>${a.name}</strong><div class="muted">${a.desc}${a.ok?' · 已解鎖':''}</div></div></div>`).join('');}
+  $('saveReminder').addEventListener('click',()=>{state.reminder=$('reminderTime').value||'20:00';save();showNotice('dailyMessage','已儲存每日提醒時間：'+state.reminder+'。請保持網頁開啟，才能檢查提醒。');});
+  $('notificationToggle').addEventListener('change',async e=>{if(!e.target.checked){state.notifications=false;save();return;}if(!('Notification'in window)){e.target.checked=false;showNotice('dailyMessage','此瀏覽器不支援通知功能。',true);return;}const permission=await Notification.requestPermission();state.notifications=permission==='granted';e.target.checked=state.notifications;save();showNotice('dailyMessage',state.notifications?'通知權限已開啟；網頁開啟時會檢查提醒。':'未取得通知權限，請到瀏覽器設定中允許通知。',!state.notifications);});
+  function checkReminder(){if(!state.notifications||!('Notification'in window)||Notification.permission!=='granted')return;const now=new Date(),hh=String(now.getHours()).padStart(2,'0'),mm=String(now.getMinutes()).padStart(2,'0'),key=today();if(hh+':'+mm>=(state.reminder||'20:00')&&state.lastReminderDate!==key){const noLedger=!state.records.some(r=>r.date===key),p=activePlant(),needsWater=p&&p.lastWatered!==key;if(noLedger||needsWater){new Notification('存錢小農場 🌱',{body:[noLedger?'別忘了完成今天的記帳！':'',needsWater?'菜園的植物還在等你澆水。':''].filter(Boolean).join(' ')});}state.lastReminderDate=key;save();}}
+  render();checkReminder();setInterval(checkReminder,60000);
+})();
+</script>
+</body>
+</html>
