@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "word": "예습",
+    "roman": "ye-seup",
+    "meaning": "預習",
+    "example": "수업 전에 예습을 해요.",
+    "translation": "上課前會先預習。",
+    "category": "學習",
+    "level": "初級"
+  },
+  {
+    "id": 2,
+    "word": "복습",
+    "roman": "bok-seup",
+    "meaning": "複習",
+    "example": "오늘 배운 내용을 복습했어요.",
+    "translation": "我複習了今天學的內容。",
+    "category": "學習",
+    "level": "初級"
+  },
+  {
+    "id": 3,
+    "word": "약속",
+    "roman": "yak-sok",
+    "meaning": "約定、約會",
+    "example": "친구와 약속이 있어요.",
+    "translation": "我和朋友有約。",
+    "category": "生活",
+    "level": "初級"
+  },
+  {
+    "id": 4,
+    "word": "도서관",
+    "roman": "do-seo-gwan",
+    "meaning": "圖書館",
+    "example": "도서관에서 공부해요.",
+    "translation": "我在圖書館讀書。",
+    "category": "場所",
+    "level": "初級"
+  },
+  {
+    "id": 5,
+    "word": "천천히",
+    "roman": "cheon-cheon-hi",
+    "meaning": "慢慢地",
+    "example": "천천히 말해 주세요.",
+    "translation": "請慢慢說。",
+    "category": "副詞",
+    "level": "初級"
+  },
+  {
+    "id": 6,
+    "word": "아마",
+    "roman": "a-ma",
+    "meaning": "大概、可能",
+    "example": "내일은 아마 비가 올 거예요.",
+    "translation": "明天可能會下雨。",
+    "category": "副詞",
+    "level": "初級"
+  },
+  {
+    "id": 7,
+    "word": "든든하다",
+    "roman": "deun-deun-ha-da",
+    "meaning": "安心、踏實；飽足",
+    "example": "네가 있어서 정말 든든해.",
+    "translation": "有你在真的讓人很安心。",
+    "category": "形容詞",
+    "level": "中級"
+  },
+  {
+    "id": 8,
+    "word": "소중하다",
+    "roman": "so-jung-ha-da",
+    "meaning": "珍貴、重要",
+    "example": "가족은 나에게 소중해요.",
+    "translation": "家人對我來說很珍貴。",
+    "category": "形容詞",
+    "level": "初級"
+  },
+  {
+    "id": 9,
+    "word": "결정하다",
+    "roman": "gyeol-jeong-ha-da",
+    "meaning": "決定",
+    "example": "아직 결정하지 못했어요.",
+    "translation": "我還沒辦法做決定。",
+    "category": "動詞",
+    "level": "中級"
+  },
+  {
+    "id": 10,
+    "word": "경험",
+    "roman": "gyeong-heom",
+    "meaning": "經驗",
+    "example": "새로운 경험을 하고 싶어요.",
+    "translation": "我想獲得新的經驗。",
+    "category": "名詞",
+    "level": "初級"
+  },
+  {
+    "id": 11,
+    "word": "바쁘다",
+    "roman": "ba-ppeu-da",
+    "meaning": "忙碌",
+    "example": "요즘 일이 너무 바빠요.",
+    "translation": "最近工作非常忙。",
+    "category": "形容詞",
+    "level": "初級"
+  },
+  {
+    "id": 12,
+    "word": "기억하다",
+    "roman": "gi-eok-ha-da",
+    "meaning": "記得",
+    "example": "그날을 아직도 기억해요.",
+    "translation": "我到現在還記得那一天。",
+    "category": "動詞",
+    "level": "中級"
+  }
+]
