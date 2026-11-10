@@ -6,10 +6,10 @@ let answered = false;
 
 async function loadData() {
   const [v, g, q] = await Promise.all([
-    fetch("data/vocabulary.json").then(r => r.json()),
-    fetch("data/grammar.json").then(r => r.json()),
-    fetch("data/quiz.json").then(r => r.json())
-  ]);
+  fetch("./vocabulary.json").then(r => r.json()),
+  fetch("./grammar.json").then(r => r.json()),
+  fetch("./quiz.json").then(r => r.json())
+]);
   vocabulary = v; grammarNotes = g; quizData = q;
   document.getElementById("word-count").textContent = String(v.length).padStart(2, "0");
   document.getElementById("grammar-count").textContent = String(g.length).padStart(2, "0");
